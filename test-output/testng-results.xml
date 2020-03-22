@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="23926" started-at="2020-03-21T21:14:59 CDT" finished-at="2020-03-21T21:15:23 CDT">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="23926" started-at="2020-03-21T21:14:59 CDT" finished-at="2020-03-21T21:15:23 CDT">
+      <class name="GitProject.AtumationGitProject.HomePageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@710f4dc7]" name="initialize" is-config="true" duration-ms="13355" started-at="2020-03-21T21:14:59 CDT" finished-at="2020-03-21T21:15:13 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="thirdPartyForm()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@710f4dc7]" name="thirdPartyForm" duration-ms="9956" started-at="2020-03-21T21:15:13 CDT" finished-at="2020-03-21T21:15:23 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdPartyForm -->
+        <test-method status="PASS" signature="thirdPartyFormIncomplete()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@710f4dc7]" name="thirdPartyFormIncomplete" duration-ms="1" started-at="2020-03-21T21:15:23 CDT" finished-at="2020-03-21T21:15:23 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdPartyFormIncomplete -->
+        <test-method status="PASS" signature="thirdPartyFormSelected()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@710f4dc7]" name="thirdPartyFormSelected" duration-ms="406" started-at="2020-03-21T21:15:23 CDT" finished-at="2020-03-21T21:15:23 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdPartyFormSelected -->
+      </class> <!-- GitProject.AtumationGitProject.HomePageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
