@@ -14,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 
 public class Base {
@@ -73,11 +72,11 @@ public class Base {
 		FileUtils.copyFile(src, new File("C:\\test\\"+result+"screenshot.png"));
 	}
 	
-	/*
+	
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
-	}*/
+	}
 	
 
 }
