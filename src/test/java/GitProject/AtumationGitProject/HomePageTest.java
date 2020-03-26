@@ -38,7 +38,7 @@ public class HomePageTest extends Base {
 		log.info("Navigate to homep page");
 	}
 	
-	@Test
+	/*@Test
 	public void thirdPartyFormSelected(){
 		
 		wait = new WebDriverWait(driver, 30);
@@ -48,7 +48,7 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getThirdPartyText()));
 		AssertJUnit.assertTrue(hp.getThirdPartyText().isDisplayed());
 		log.info("Text is displayed");
-	}
+	}*/
 	
 	/*@Test
 	public void thirdPartyForm (){
@@ -86,7 +86,7 @@ public class HomePageTest extends Base {
 		
 	}*/
 	
-	@Test
+	/*@Test
 	public void thirdPartyFormFieldValidation (){
 		
 		wait = new WebDriverWait(driver, 30);
@@ -102,8 +102,24 @@ public class HomePageTest extends Base {
 		AssertJUnit.assertTrue(hp.getBlankFieldErrorMessage().isDisplayed());
 		log.info("Error message appear sucessfully");
 		
+	}*/
+	
+	
+	@Test
+	public void mosaicCustomerFormSelected (){
+		
+		wait = new WebDriverWait(driver, 30);
+		
+		hp= new HomePage(driver);
+		hp.getRadioButtonTwo().click();
+		wait.until(ExpectedConditions.visibilityOf(hp.getCustomInfoText()));
+		AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
+		log.info("Text for customer form is displayed");
+		
 		
 	}
+	
+	
 	
 
 	
