@@ -51,6 +51,8 @@ public class HomePage {
 	private By errorMessageText = By.xpath("//div[@class='slds-text-heading_small slds-text-align_center slds-text-color_error']");
 	//div[contains(text(),'An error occurred, please contact us at (855) 746-5551 or email loanservicing@joinmosaic.com')]
 	
+	private By blankFieldErrorMessage = By.xpath("//div[@id='help-message-6']");
+	
 	public HomePage (WebDriver driver){
 		this.driver = driver;
 	}
@@ -136,6 +138,11 @@ public class HomePage {
 	
 	public WebElement getErrorMessageText() {
 		return driver.findElement(errorMessageText);
+	}
+	
+	
+	public WebElement getBlankFieldErrorMessage() {
+		return driver.findElement(blankFieldErrorMessage);
 	}
 		
 		

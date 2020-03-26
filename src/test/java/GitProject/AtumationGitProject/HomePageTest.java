@@ -50,7 +50,7 @@ public class HomePageTest extends Base {
 		log.info("Text is displayed");
 	}
 	
-	@Test
+	/*@Test
 	public void thirdPartyForm (){
 		
 		wait = new WebDriverWait(driver, 30);
@@ -68,76 +68,44 @@ public class HomePageTest extends Base {
 		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
 		log.info("Form was submitted");
 		
-	}
+	}*/
 	
 	
-	@Test
+	/*@Test
 	public void thirdPartyFormIncomplete (){
 		
-	}
-	
-	
-	
-	/*
-	
-	@Test
-	//we need to pass what data we are going to use
-	public void PageNavigationVisibility() throws IOException {
+		wait = new WebDriverWait(driver, 30);
 		
-		//we call landingPage methods
 		hp= new HomePage(driver);
-		//Check if navBar is displayed
-		AssertJUnit.assertTrue(hp.getNavBar().isDisplayed());
-		log.info("Navigation bar is display");
-	}
+		hp.getThirdPartyName().sendKeys("Federica");
+		hp.getThirdPartyLastName().sendKeys("Puig");
+		hp.getThirdPartyPhone().sendKeys("55522255");
+		hp.getThirdPartyEmail().sendKeys("test@gmail.com");
+		AssertJUnit.assertFalse(hp.getSubmitButton().isEnabled());
+		log.info("Submit button is not enable");
+		
+	}*/
 	
 	@Test
-	public void inputFormMenuElements() {
+	public void thirdPartyFormFieldValidation (){
 		
-		hp.getInputFormMenu().click();
+		wait = new WebDriverWait(driver, 30);
+		
+		hp= new HomePage(driver);
+		hp.getThirdPartyName().sendKeys("Federica");
+		hp.getThirdPartyLastName().sendKeys("Puig");
+		hp.getThirdPartyPhone().sendKeys("55522255");
+		hp.getThirdPartyEmail().sendKeys("test@gmail.com");
+		hp.getCustomerLoanID().click();
+		hp.getInstallationCity().sendKeys("Cedar Rapids");
+		wait.until(ExpectedConditions.visibilityOf(hp.getBlankFieldErrorMessage()));
+		AssertJUnit.assertTrue(hp.getBlankFieldErrorMessage().isDisplayed());
+		log.info("Error message appear sucessfully");
 		
 		
-		/* WebElement dropdown = driver.findElement(By.xpath("//a[@class='dropdown-toggle'][contains(text(),'Input Forms')]/following-sibling::ul[1]")); 
-	      Ul select = new Ul(dropdown); 
-	      java.util.List<WebElement> options = select.getOptions(); 
-	     
-	      for(WebElement item:options) { 
-	      
-	           System.out.println("Dropdown values are "+ item.getText());          
-	         }*/
-		
-		
-	/*	List <WebElement> elements = driver.findElements(By.xpath("//a[@class='dropdown-toggle'][contains(text(),'Input Forms')]/following-sibling::ul[1]"));
-		System.out.println("La cantidad de elementos es de : " + elements.size());
-		
-		/*List <WebElement> elements = driver.findElements(By.xpath("//li[@class='dropdown open']//ul[@class='dropdown-menu']"));
-		
-		  for (int i=0; i<elements.size(); i++){
-	            log.info(elements.size());
-	        }	*/
-				
-	//}
+	}
 	
-	
-	/*  private int getNumberOfElements(List<WebElement> list) {
-		
-		  for (int i=0; i<list.size(); i++){
-			  count = list.size();
-	        }
-		return count;
-		  
-		
-	}*/
 
-	/*public static int getNumberOfElements (WebDriver driver, ArrayList <Integer> list) {
-		
-		return list.size();
-	}*/
-	  
-	 
-
-		
-	
 	
 }
    

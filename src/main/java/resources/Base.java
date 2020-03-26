@@ -43,8 +43,7 @@ public class Base {
 		
 		if(browserName.equals("chrome")) {
 			System.out.println("Launching google chrome browser");
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Usuario\\chromedriver.exe ");
-			
+			System.setProperty("webdriver.chrome.driver",  "C:\\Users\\Usuario\\chromedriver.exe ");
 			//next 2 lines fix the issue: [1582906052.854][SEVERE]: Timed out receiving message from renderer: 0.100
 			ChromeOptions options = new ChromeOptions();
 			options.setPageLoadStrategy(PageLoadStrategy.NONE);
@@ -73,10 +72,10 @@ public class Base {
 	}
 	
 	
-	@AfterClass
+	/*@AfterClass
 	public void tearDown() {
 		driver.quit();
-	}
+	}*/
 	
 
 }
