@@ -15,7 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import AtumationGitProjec.PageObject.HomePage;
@@ -38,7 +40,7 @@ public class HomePageTest extends Base {
 		log.info("Navigate to homep page");
 	}
 	
-	/*@Test
+	@Test
 	public void thirdPartyFormSelected(){
 		
 		wait = new WebDriverWait(driver, 30);
@@ -48,16 +50,17 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getThirdPartyText()));
 		AssertJUnit.assertTrue(hp.getThirdPartyText().isDisplayed());
 		log.info("Text is displayed");
-	}*/
+	}
 	
-	/*@Test
-	public void thirdPartyForm (){
+	//Calling the data provider
+	@Test (dataProvider = "getData")
+	public void thirdPartyForm (String username, String lastname){
 		
 		wait = new WebDriverWait(driver, 30);
 		
 		hp= new HomePage(driver);
-		hp.getThirdPartyName().sendKeys("Federica");
-		hp.getThirdPartyLastName().sendKeys("Puig");
+		hp.getThirdPartyName().sendKeys(username);
+		hp.getThirdPartyLastName().sendKeys(lastname);
 		hp.getThirdPartyPhone().sendKeys("55522255");
 		hp.getThirdPartyEmail().sendKeys("test@gmail.com");
 		hp.getCustomerLoanID().sendKeys("12453");
@@ -67,8 +70,10 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getErrorMessageText()));
 		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
 		log.info("Form was submitted");
+		hp.getThirdPartyName().clear();
+		hp.getThirdPartyLastName().clear();
 		
-	}*/
+	}
 	
 	
 	/*@Test
@@ -100,12 +105,12 @@ public class HomePageTest extends Base {
 		hp.getInstallationCity().sendKeys("Cedar Rapids");
 		wait.until(ExpectedConditions.visibilityOf(hp.getBlankFieldErrorMessage()));
 		AssertJUnit.assertTrue(hp.getBlankFieldErrorMessage().isDisplayed());
-		log.info("Error message appear sucessfully");
+		log.info("Error message appear successfully");
 		
 	}*/
 	
 	
-	@Test
+	/*@Test
 	public void mosaicCustomerFormSelected (){
 		
 		wait = new WebDriverWait(driver, 30);
@@ -113,13 +118,45 @@ public class HomePageTest extends Base {
 		hp= new HomePage(driver);
 		hp.getRadioButtonTwo().click();
 		wait.until(ExpectedConditions.visibilityOf(hp.getCustomInfoText()));
-		AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
+	//	AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
+	//	log.info("Text for customer form is displayed");
+		
+		String obtainedText = hp.getCustomInfoText().getText();
+		AssertJUnit.assertEquals("Customer Information", obtainedText);
 		log.info("Text for customer form is displayed");
 		
+	}*/
+	
+	
+	/*//Calling the data provider
+		@Test (dataProvider = "getData")
+		public void Mobile(String username, String password){
+			System.out.println("before testMobile");
+			System.out.println(username);
+			System.out.println(password);
+		}*/
+	
+	
+	//Creating the data provider
+		@DataProvider
+		public Object[][] getData(){
+			
+			Object[][] data = new Object[3][2];
+			
+			data[0][0] = "FistUsername";
+			data[0][1] = "FirstLastname";
+			
+			data[1][0] = "SecondUsername";
+			data[1][1] = "SecondLastname";
+			
+			data[2][0] = "ThirdUsername";
+			data[2][1] = "ThirdLastname";
+			
+			return data;
+			
+		}
 		
-	}
-	
-	
+		
 	
 
 	
