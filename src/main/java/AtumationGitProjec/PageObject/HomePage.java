@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.AssertJUnit;
 
 public class HomePage {
@@ -13,6 +14,7 @@ public class HomePage {
 	public WebDriver driver;
 	
 	//RadioButtons
+	
 	private By radioButtonOne = By.xpath("//span[contains(text(),'Third Party')]");
 	private By radioButtonTwo = By.xpath("//span[contains(text(),'Mosaic Customer')]");
 	
@@ -20,14 +22,12 @@ public class HomePage {
 	private By thirdPartyText = By.xpath("//h2[contains(text(),'Third Party Contact Information')]");
 	
 	//Customer Information TEXT
+
 	private By customInfoText = By.xpath("//h2[@class='slds-text-heading_small']");
-	
-	
 	private By thirdPartyName = By.xpath("//*[@placeholder='Representative first name']");
 	private By thirdPartyLastName = By.xpath("//*[@placeholder='Representative last name']");
 	private By thirdPartyPhone = By.xpath("//*[@placeholder='Representative phone number']");
 	private By thirdPartyEmail = By.xpath("//*[@placeholder='Representative email']");
-	
 	//Mosaic Customer’s Loan Information
 	
 	private By customerLoanID = By.xpath("//*[@placeholder='Enter the loan ID']");

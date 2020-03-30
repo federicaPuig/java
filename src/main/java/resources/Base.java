@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
 
 public class Base {
 	
@@ -62,6 +63,13 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 		
+	}
+	
+	@BeforeTest
+	public void initialize() throws IOException {
+		driver = inittializeDriver(); //it will open the browser
+		driver.get(prop.getProperty("url"));
+		//log.info("Navigate to homep page");
 	}
 	
 	//Take screenshot method

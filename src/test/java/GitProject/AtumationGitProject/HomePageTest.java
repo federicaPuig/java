@@ -33,18 +33,14 @@ public class HomePageTest extends Base {
 	public static Logger log = LogManager.getLogger(HomePageTest.class.getName());
 	HomePage hp;
 	
-	@BeforeTest
-	public void initialize() throws IOException {
-		driver = inittializeDriver(); //it will open the browser
-		driver.get(prop.getProperty("url"));
-		log.info("Navigate to homep page");
-	}
+	
 	
 	@Test
-	public void thirdPartyFormSelected(){
+	public void thirdPartyFormSelected() throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
-		
+		initialize();
+		log.info("Navigate to homep page");
 		hp= new HomePage(driver);
 		hp.getRadioButtonOne().click();
 		wait.until(ExpectedConditions.visibilityOf(hp.getThirdPartyText()));
@@ -54,10 +50,11 @@ public class HomePageTest extends Base {
 	
 	//Calling the data provider
 	@Test (dataProvider = "getData")
-	public void thirdPartyForm (String username, String lastname){
+	public void thirdPartyForm (String username, String lastname) throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
-		
+		initialize();
+		log.info("Navigate to homep page");
 		hp= new HomePage(driver);
 		hp.getThirdPartyName().sendKeys(username);
 		hp.getThirdPartyLastName().sendKeys(lastname);
@@ -70,17 +67,16 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getErrorMessageText()));
 		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
 		log.info("Form was submitted");
-		hp.getThirdPartyName().clear();
-		hp.getThirdPartyLastName().clear();
 		
 	}
 	
 	
-	/*@Test
-	public void thirdPartyFormIncomplete (){
+	@Test 
+	public void thirdPartyFormIncomplete () throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
-		
+		initialize();
+		log.info("Navigate to homep page");
 		hp= new HomePage(driver);
 		hp.getThirdPartyName().sendKeys("Federica");
 		hp.getThirdPartyLastName().sendKeys("Puig");
@@ -89,13 +85,14 @@ public class HomePageTest extends Base {
 		AssertJUnit.assertFalse(hp.getSubmitButton().isEnabled());
 		log.info("Submit button is not enable");
 		
-	}*/
+	}
 	
-	/*@Test
-	public void thirdPartyFormFieldValidation (){
+	@Test 
+	public void thirdPartyFormFieldValidation () throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
-		
+		initialize();
+		log.info("Navigate to homep page");
 		hp= new HomePage(driver);
 		hp.getThirdPartyName().sendKeys("Federica");
 		hp.getThirdPartyLastName().sendKeys("Puig");
@@ -107,14 +104,15 @@ public class HomePageTest extends Base {
 		AssertJUnit.assertTrue(hp.getBlankFieldErrorMessage().isDisplayed());
 		log.info("Error message appear successfully");
 		
-	}*/
+	}
 	
 	
-	/*@Test
-	public void mosaicCustomerFormSelected (){
+	@Test
+	public void mosaicCustomerFormSelected () throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
-		
+		initialize();
+		log.info("Navigate to homep page");
 		hp= new HomePage(driver);
 		hp.getRadioButtonTwo().click();
 		wait.until(ExpectedConditions.visibilityOf(hp.getCustomInfoText()));
@@ -125,16 +123,7 @@ public class HomePageTest extends Base {
 		AssertJUnit.assertEquals("Customer Information", obtainedText);
 		log.info("Text for customer form is displayed");
 		
-	}*/
-	
-	
-	/*//Calling the data provider
-		@Test (dataProvider = "getData")
-		public void Mobile(String username, String password){
-			System.out.println("before testMobile");
-			System.out.println(username);
-			System.out.println(password);
-		}*/
+	}
 	
 	
 	//Creating the data provider
@@ -143,14 +132,14 @@ public class HomePageTest extends Base {
 			
 			Object[][] data = new Object[3][2];
 			
-			data[0][0] = "FistUsername";
-			data[0][1] = "FirstLastname";
+			data[0][0] = "Federica";
+			data[0][1] = "Puig";
 			
-			data[1][0] = "SecondUsername";
-			data[1][1] = "SecondLastname";
+			data[1][0] = "Ramón";
+			data[1][1] = "Gómez";
 			
-			data[2][0] = "ThirdUsername";
-			data[2][1] = "ThirdLastname";
+			data[2][0] = "Pablo";
+			data[2][1] = "Boing";
 			
 			return data;
 			
