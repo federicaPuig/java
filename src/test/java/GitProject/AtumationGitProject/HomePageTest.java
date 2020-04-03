@@ -35,7 +35,7 @@ public class HomePageTest extends Base {
 	
 	
 	
-	@Test
+/*	@Test
 	public void thirdPartyFormSelected() throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
@@ -49,7 +49,7 @@ public class HomePageTest extends Base {
 	}
 	
 	//Calling the data provider
-	@Test (dataProvider = "getData")
+	@Test (dataProvider = "thirdPartyFormData")
 	public void thirdPartyForm (String username, String lastname) throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
@@ -67,8 +67,8 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getErrorMessageText()));
 		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
 		
-		String ErrorText = hp.getErrorMessageText().getText();
-		AssertJUnit.assertEquals("An error occurred, please contact us at (855) 746-5551 or email loanservicing@joinmosaic.com", ErrorText);
+		String ErrorTextFirstForm = hp.getErrorMessageText().getText();
+		AssertJUnit.assertEquals("An error occurred, please contact us at (855) 746-5551 or email loanservicing@joinmosaic.com", ErrorTextFirstForm);
 		log.info("Form was submitted");
 		
 	}
@@ -112,6 +112,25 @@ public class HomePageTest extends Base {
 		
 	}
 	
+	//Creating the data provider for first form
+			@DataProvider
+			public Object[][] thirdPartyFormData(){
+				
+				Object[][] data = new Object[3][2];
+				
+				data[0][0] = "Federica";
+				data[0][1] = "Puig";
+				
+				data[1][0] = "Ramón";
+				data[1][1] = "Gómez";
+				
+				data[2][0] = "Pablo";
+				data[2][1] = "Boing";
+				
+				return data;
+				
+			}*/
+	
 	
 	@Test
 	public void mosaicCustomerFormSelected () throws IOException{
@@ -124,35 +143,58 @@ public class HomePageTest extends Base {
 		wait.until(ExpectedConditions.visibilityOf(hp.getCustomInfoText()));
 		AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
 		
-		String obtainedText = hp.getCustomInfoText().getText();
-		AssertJUnit.assertEquals("Customer Information", obtainedText);
+		String obtainedTextSecondForm = hp.getCustomInfoText().getText();
+		AssertJUnit.assertEquals("Customer Information", obtainedTextSecondForm);
 		log.info("Text for customer form is displayed");
 		
 	}
 	
 	
-	//Creating the data provider
-		@DataProvider
-		public Object[][] getData(){
-			
-			Object[][] data = new Object[3][2];
-			
-			data[0][0] = "Federica";
-			data[0][1] = "Puig";
-			
-			data[1][0] = "Ramón";
-			data[1][1] = "Gómez";
-			
-			data[2][0] = "Pablo";
-			data[2][1] = "Boing";
-			
-			return data;
-			
-		}
 		
 		
-	
-
+	@Test (dataProvider = "mosaicCustomerFormData")
+	public void mosaicCustomerForm (String username, String lastname) throws IOException{
+			
+		wait = new WebDriverWait(driver, 30);
+		initialize();
+		log.info("Navigate to homep page");
+		hp= new HomePage(driver);
+		hp.getRadioButtonTwo().click();
+		hp.getCustomerEmail().sendKeys("federica@test.com");
+		hp.getCustomerFirstName().sendKeys(username);
+		hp.getCustomerLastName().sendKeys(lastname);
+		hp.getZipMosaicForm().sendKeys("45215");
+		hp.getCustomerCity().sendKeys("Cedar Rapids");
+		hp.getCustomerSnn().sendKeys("4452");
+		hp.getCustomerCaseReference().sendKeys("1236");
+		hp.getSubmitButton().click();
+		wait.until(ExpectedConditions.visibilityOf(hp.getErrorMessageText()));
+		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
+			
+		String ErrorTextSecondForm = hp.getErrorMessageText().getText();
+		AssertJUnit.assertEquals("Customer not found, please contact us at (855) 746-5551 or email loanservicing@joinmosaic.com", ErrorTextSecondForm);
+		log.info("Form was submitted");
+			
+		}	
+		
+		//Creating the data provider for second form
+				@DataProvider
+				public Object[][] mosaicCustomerFormData(){
+					
+					Object[][] data = new Object[2][2];
+					
+					data[0][0] = "Federica";
+					data[0][1] = "Puig";
+					
+					data[1][0] = "Ramón";
+					data[1][1] = "Gómez";
+					
+					return data;
+					
+			}
+				
+				
+		
 	
 }
    

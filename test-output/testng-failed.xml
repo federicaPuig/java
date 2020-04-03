@@ -5,12 +5,9 @@
     <classes>
       <class name="GitProject.AtumationGitProject.HomePageTest">
         <methods>
-          <include name="mosaicCustomerFormSelected"/>
-          <include name="thirdPartyForm" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+          <include name="mosaicCustomerForm" invocation-numbers="0 1"/>
           <include name="initialize"/>
-          <include name="thirdPartyFormSelected"/>
-          <include name="thirdPartyFormFieldValidation"/>
-          <include name="thirdPartyFormIncomplete"/>
         </methods>
       </class> <!-- GitProject.AtumationGitProject.HomePageTest -->
     </classes>

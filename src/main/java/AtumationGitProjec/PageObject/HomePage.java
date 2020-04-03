@@ -22,8 +22,8 @@ public class HomePage {
 	private By thirdPartyText = By.xpath("//h2[contains(text(),'Third Party Contact Information')]");
 	
 	//Customer Information TEXT
-
 	private By customInfoText = By.xpath("//h2[@class='slds-text-heading_small']");
+	
 	private By thirdPartyName = By.xpath("//*[@placeholder='Representative first name']");
 	private By thirdPartyLastName = By.xpath("//*[@placeholder='Representative last name']");
 	private By thirdPartyPhone = By.xpath("//*[@placeholder='Representative phone number']");
@@ -37,12 +37,17 @@ public class HomePage {
 	
 	//Mosaic Customer Information
 	
+
 	private By customerEmail = By.xpath("//*[@placeholder='Enter your email']");
 	private By customerFirstName = By.xpath("//*[@placeholder='Enter your first name']");
 	private By customerLastName = By.xpath("//*[@placeholder='Enter your last name']");
 	private By customerCity = By.xpath("//*[@placeholder='Enter your city']");
+	private By zipMosaicForm = By.xpath("//*[@placeholder='Enter your zipcode (5 digits)']");
 	private By customerSnn = By.xpath("//*[@placeholder='Enter your last 4 SSN numbers']");
-	private By customerCaseReference = By.name("case");
+	private By customerCaseReference = By.xpath("//*[@placeholder='Enter the Case reference number']");
+	
+	
+	
 	
 	//Submit button
 	
@@ -143,6 +148,10 @@ public class HomePage {
 	
 	public WebElement getBlankFieldErrorMessage() {
 		return driver.findElement(blankFieldErrorMessage);
+	}
+	
+	public WebElement getZipMosaicForm() {
+		return driver.findElement(zipMosaicForm);
 	}
 		
 		
