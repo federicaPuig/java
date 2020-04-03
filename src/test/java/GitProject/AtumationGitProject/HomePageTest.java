@@ -35,7 +35,7 @@ public class HomePageTest extends Base {
 	
 	
 	
-/*	@Test
+	@Test
 	public void thirdPartyFormSelected() throws IOException{
 		
 		wait = new WebDriverWait(driver, 30);
@@ -129,7 +129,7 @@ public class HomePageTest extends Base {
 				
 				return data;
 				
-			}*/
+			}
 	
 	
 	@Test
