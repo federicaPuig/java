@@ -66,6 +66,9 @@ public class HomePageTest extends Base {
 		hp.getSubmitButton().click();
 		wait.until(ExpectedConditions.visibilityOf(hp.getErrorMessageText()));
 		AssertJUnit.assertTrue(hp.getErrorMessageText().isDisplayed());
+		
+		String ErrorText = hp.getErrorMessageText().getText();
+		AssertJUnit.assertEquals("An error occurred, please contact us at (855) 746-5551 or email loanservicing@joinmosaic.com", ErrorText);
 		log.info("Form was submitted");
 		
 	}
@@ -102,6 +105,9 @@ public class HomePageTest extends Base {
 		hp.getInstallationCity().sendKeys("Cedar Rapids");
 		wait.until(ExpectedConditions.visibilityOf(hp.getBlankFieldErrorMessage()));
 		AssertJUnit.assertTrue(hp.getBlankFieldErrorMessage().isDisplayed());
+		
+		String FieldErrorText = hp.getBlankFieldErrorMessage().getText();
+		AssertJUnit.assertEquals("Complete this field.", FieldErrorText);
 		log.info("Error message appear successfully");
 		
 	}
@@ -116,8 +122,7 @@ public class HomePageTest extends Base {
 		hp= new HomePage(driver);
 		hp.getRadioButtonTwo().click();
 		wait.until(ExpectedConditions.visibilityOf(hp.getCustomInfoText()));
-	//	AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
-	//	log.info("Text for customer form is displayed");
+		AssertJUnit.assertTrue(hp.getCustomInfoText().isDisplayed());
 		
 		String obtainedText = hp.getCustomInfoText().getText();
 		AssertJUnit.assertEquals("Customer Information", obtainedText);

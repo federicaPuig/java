@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="154541" started-at="2020-03-30T14:46:31 CDT" finished-at="2020-03-30T14:49:05 CDT">
+  <suite name="Default suite" duration-ms="154823" started-at="2020-04-03T16:14:45 CDT" finished-at="2020-04-03T16:17:20 CDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="154541" started-at="2020-03-30T14:46:31 CDT" finished-at="2020-03-30T14:49:05 CDT">
+    <test name="Default test" duration-ms="154823" started-at="2020-04-03T16:14:45 CDT" finished-at="2020-04-03T16:17:20 CDT">
       <class name="GitProject.AtumationGitProject.HomePageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="initialize" is-config="true" duration-ms="12315" started-at="2020-03-30T14:46:31 CDT" finished-at="2020-03-30T14:46:43 CDT">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="initialize" is-config="true" duration-ms="13008" started-at="2020-04-03T16:14:45 CDT" finished-at="2020-04-03T16:14:58 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="mosaicCustomerFormSelected()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="mosaicCustomerFormSelected" duration-ms="19538" started-at="2020-03-30T14:46:43 CDT" finished-at="2020-03-30T14:47:03 CDT">
+        <test-method status="PASS" signature="mosaicCustomerFormSelected()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="mosaicCustomerFormSelected" duration-ms="14626" started-at="2020-04-03T16:14:58 CDT" finished-at="2020-04-03T16:15:13 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mosaicCustomerFormSelected -->
-        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyForm" duration-ms="18011" started-at="2020-03-30T14:47:03 CDT" data-provider="getData" finished-at="2020-03-30T14:47:21 CDT">
+        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyForm" duration-ms="17410" started-at="2020-04-03T16:15:13 CDT" data-provider="getData" finished-at="2020-04-03T16:15:30 CDT">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyForm -->
-        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyForm" duration-ms="20190" started-at="2020-03-30T14:47:21 CDT" data-provider="getData" finished-at="2020-03-30T14:47:41 CDT">
+        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyForm" duration-ms="24671" started-at="2020-04-03T16:15:30 CDT" data-provider="getData" finished-at="2020-04-03T16:15:55 CDT">
           <params>
             <param index="0">
               <value>
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyForm -->
-        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyForm" duration-ms="25412" started-at="2020-03-30T14:47:41 CDT" data-provider="getData" finished-at="2020-03-30T14:48:06 CDT">
+        <test-method status="PASS" signature="thirdPartyForm(java.lang.String, java.lang.String)[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyForm" duration-ms="17643" started-at="2020-04-03T16:15:55 CDT" data-provider="getData" finished-at="2020-04-03T16:16:13 CDT">
           <params>
             <param index="0">
               <value>
@@ -63,18 +63,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyForm -->
-        <test-method status="PASS" signature="thirdPartyFormFieldValidation()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyFormFieldValidation" duration-ms="17372" started-at="2020-03-30T14:48:06 CDT" finished-at="2020-03-30T14:48:24 CDT">
+        <test-method status="PASS" signature="thirdPartyFormFieldValidation()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyFormFieldValidation" duration-ms="21984" started-at="2020-04-03T16:16:13 CDT" finished-at="2020-04-03T16:16:35 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyFormFieldValidation -->
-        <test-method status="PASS" signature="thirdPartyFormIncomplete()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyFormIncomplete" duration-ms="19388" started-at="2020-03-30T14:48:24 CDT" finished-at="2020-03-30T14:48:43 CDT">
+        <test-method status="PASS" signature="thirdPartyFormIncomplete()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyFormIncomplete" duration-ms="18988" started-at="2020-04-03T16:16:35 CDT" finished-at="2020-04-03T16:16:54 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyFormIncomplete -->
-        <test-method status="PASS" signature="thirdPartyFormSelected()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@65e98b1c]" name="thirdPartyFormSelected" duration-ms="22180" started-at="2020-03-30T14:48:43 CDT" finished-at="2020-03-30T14:49:05 CDT">
+        <test-method status="PASS" signature="thirdPartyFormSelected()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="thirdPartyFormSelected" duration-ms="18980" started-at="2020-04-03T16:16:54 CDT" finished-at="2020-04-03T16:17:13 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thirdPartyFormSelected -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:GitProject.AtumationGitProject.HomePageTest@61322f9d]" name="tearDown" is-config="true" duration-ms="7301" started-at="2020-04-03T16:17:13 CDT" finished-at="2020-04-03T16:17:20 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- GitProject.AtumationGitProject.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
